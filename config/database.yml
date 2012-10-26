@@ -21,10 +21,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: jdbc
+  url: jdbc:as400://10.2.0.211/denoncourt
+  driver: com.ibm.as400.access.AS400JDBCDriver
+  username: don
+  password: <%= begin IO.read("/opt/webapps/railstime.db") rescue "" end %>
 
 
 jira:

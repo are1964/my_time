@@ -9,7 +9,7 @@ gem 'rails', '3.2.3'
 
 gem 'activerecord-jdbc-adapter'
 gem 'activerecord-jdbcmysql-adapter'
-gem 'mysql2'
+#gem 'mysql2'
 gem 'jruby-openssl'
 
 gem 'composite_primary_keys', '>5.0.0'
