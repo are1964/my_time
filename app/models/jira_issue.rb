@@ -10,11 +10,7 @@
 
 class JiraIssue < ActiveRecord::Base
   self.table_name  = "jiradb.jiraissue"
-  establish_connection :adapter  => "jdbcmysql",
-                       :database => "jiradb",
-                       :username => "secret",
-                       :password => "secret",
-                       :host => "secret"
+  establish_connection("jira")
   #has_many :work_logs, :class_name => "WorkLog", :foreign_key => "issueid"
 end
 #ID	DECIMAL	18	0	Not Null	false	3	

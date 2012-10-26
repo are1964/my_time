@@ -8,7 +8,7 @@ development:
   url: jdbc:as400://10.2.0.211/denoncourt
   driver: com.ibm.as400.access.AS400JDBCDriver
   username: don
-  password: vo2max
+  password: <%= begin IO.read("/opt/webapps/railstime.db") rescue "" end %>
 
 
 # Warning: The database defined as "test" will be erased and
@@ -25,3 +25,11 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+
+
+jira:
+  adapter: jdbcmysql
+  database: jiradb
+  username: donat
+  password: <%= begin IO.read("/opt/webapps/railstime.db") rescue "" end %>
+  host: www.kettlerusa.com
