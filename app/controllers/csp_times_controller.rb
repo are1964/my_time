@@ -7,7 +7,7 @@ class CspTimesController < ApplicationController
     month = params['month'].to_i
     last_day = Time.days_in_month(month, year)
     @from_ymd = Date.new(year, month, 1)
-    @to_ymd  = Date.new(year, month, last_day)
+    @to_ymd  = Date.new(year, month, last_day)+1
     @csp_times = CspTime.where("tiuser like 'DON%' and tidate between :from_ymd and :to_ymd",
                  {:from_ymd => @from_ymd, :to_ymd  => @to_ymd} )
     @work_logs = WorkLog.joins(:jira_issue).where(:created => @from_ymd..@to_ymd).order("created DESC")

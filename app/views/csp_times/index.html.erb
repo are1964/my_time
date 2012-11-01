@@ -1,4 +1,4 @@
-<h1>Work Summary <%= @from_ymd.strftime('%y/%m/%d') %> to <%= @to_ymd.strftime('%y/%m/%d') %> </h1>
+<h1>Work Summary <%= @from_ymd.strftime('%y/%m/%d') %> to <%= (@to_ymd-1).strftime('%y/%m/%d') %> </h1>
 <h2>Daffron</h2>
 <table>
   <tr>
