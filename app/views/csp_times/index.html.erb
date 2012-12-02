@@ -1,5 +1,4 @@
-<h1>Work Summary <%= @from_ymd.strftime('%y/%m/%d') %> to <%= (@to_ymd-1).strftime('%y/%m/%d') %> </h1>
-<h2>Daffron</h2>
+<h1>Daffron: Work Summary <%= @from_ymd.strftime('%y/%m/%d') %> to <%= (@to_ymd-1).strftime('%y/%m/%d') %> </h1>
 <table>
   <tr>
     <th>Request</th>
@@ -33,26 +32,3 @@
   </tr>
 <% end %>
 </table>
-
-<h2>Kettler</h2>
-<table>
-  <tr>
-    <th>Work Date</th>
-    <th>Time</th>
-    <th>Issue No.</th>
-    <th>Task/Project</th>
-    <th>Description</th>
-  </tr>
-
-<% @work_logs.each do |log| %>
-  <tr>
-    <td><%= log.CREATED.strftime('%m/%d/%y') %></td>
-    <% timeworked = (log.timeworked / 60.0 / 60.0) %>
-    <td><%= timeworked %></td>
-    <td><%= log.jira_issue.pkey %></td>
-    <td><%= log.jira_issue.SUMMARY %></td>
-    <td><%= log.worklogbody %></td>
-  </tr>
-<% end %>
-</table>
-
