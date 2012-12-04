@@ -33,4 +33,4 @@ jira:
   database: jiradb
   username: donat
   password: <%= begin IO.read("/opt/webapps/railstime.db") rescue "" end %>
-  host: www.kettlerusa.com
+  host: the_mysql_host
